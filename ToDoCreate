@@ -1,0 +1,36 @@
+import React from "react";
+import "./App.css"
+
+class ToDoCreate extends React.Component{
+
+    handleSubmit =(e)=> {
+        e.preventDefault();
+        
+        if(!this.refs.createNewItemInput.value.trim()) {
+            alert("내용을 입력하세요")
+            this.refs.createNewItemInput.value ="";
+            return false;
+        }
+
+        this.props.createItem(this.refs.createNewItemInput.value);
+        this.refs.createNewItemInput.value ="";
+    }
+
+    render(){
+        return(
+            <div className="create-container">
+                <form className="create-form" onSubmit={this.handleSubmit}>
+                    <input
+                        type="text"
+                        placeholder="ADD TODO HERE"
+                        ref="createNewItemInput"
+                    />
+                    <button>+</button>
+                </form>
+            </div>
+        )
+    }
+
+}
+
+export default ToDoCreate;
