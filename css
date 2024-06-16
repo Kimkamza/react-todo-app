@@ -1,0 +1,58 @@
+.container {
+  width: 600px;
+  margin:50px auto 0 auto;
+  text-align: center;
+  box-shadow: 5px 5px 10px black;
+}
+
+.header {
+  background-color: rgb(152, 155, 159);
+  padding: 7px;
+}
+
+.header h1 {
+  font-size: 50px;
+  margin: 0px;
+  color: rgb(29, 29, 29);
+}
+
+.list-item {
+  display: flex;
+  align-items: center;
+  color: darkslategray;
+  margin: 10px;
+  padding: 10px;
+  font-size: 20px;
+}
+
+.title {
+  flex: 1;
+  padding: 5px;
+  text-align: left;
+}
+
+.actions {
+  text-align: right;
+
+}
+
+.button {
+  cursor: pointer;
+}
+
+.create-containter {
+  margin: 20px;
+}
+
+.create-form {
+  display: flex;
+}
+
+.create-form input {
+  flex: 4;
+  padding: 10px;
+}
+
+.create-form button {
+  flex:1;
+}
