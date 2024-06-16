@@ -1,0 +1,46 @@
+import React from "react";
+import ToDoList from"./ToDoList"
+import ToDoCreate from "./ToDoCreate";
+import "./App.css"
+
+const toDoItems = [
+  {title:"TODO1", done:false},
+  {title:"TODO2", done:true},
+];
+
+class App extends React.Component {
+  constructor(props){
+    super(props);
+
+    this.state = { toDoItems}
+  }
+
+  createItem =(item)=>{
+    toDoItems.unshift({
+      title: item,
+      done: false,
+    });
+
+    this.setState({
+      toDoItems: this.state.toDoItems
+    })
+  }
+
+
+
+  render() {
+    return(
+      <div className="container">
+        <div className="header">
+          <h1>TODO LIST</h1>
+        </div>
+        <ToDoCreate createItem={this.createItem}></ToDoCreate>
+        <ToDoList toDoItems = {this.state.toDoItems}/>
+      </div>
+    );
+  }
+
+  
+}
+
+export default App;
