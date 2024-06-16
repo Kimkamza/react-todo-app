@@ -1,0 +1,20 @@
+import React from "react";
+import "./App.css"
+import ToDoListItem from "./ToDoListItem";
+
+class ToDOList extends React.Component {
+
+    renderItems() {
+        return this.props.toDoItems.map((item,idx) => <ToDoListItem key={idx} {...item} />)
+    }
+
+    render() {
+        return(
+            <div className="list-item">
+                <p>{this.renderItems()}</p>
+            </div>
+        )
+    }
+}
+
+export default ToDOList;
